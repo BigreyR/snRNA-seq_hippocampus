@@ -1,0 +1,25 @@
+Description	pvalue	Celltype	Group
+Nervous system development	3.17E-09	qNSC1	DOWN
+Neurogenesis	2.85E-05	qNSC1	DOWN
+Dendrite development	0.005947537	qNSC1	DOWN
+Tissue regeneration	0.008328251	qNSC1	DOWN
+Positive regulation of mitotic cell cycle	0.003282806	qNSC1	DOWN
+Autophagy	0.0196173	qNSC1	DOWN
+Negative regulation of growth	3.46E-05	qNSC1	UP
+Neuron apoptotic process	4.37E-05	qNSC1	UP
+Astrocyte differentiation	0.000443004	qNSC1	UP
+Reactive oxygen species metabolic process	0.000566374	qNSC1	UP
+Long-term memory	0.000654664	qNSC1	UP
+Neuronal stem cell population maintenance	0.002078124	qNSC1	UP
+Generation of neurons	1.35E-07	qNSC2	DOWN
+Hippo signaling	0.000225543	qNSC2	DOWN
+Hippocampus development	0.003390132	qNSC2	DOWN
+Wnt signaling pathway	0.005953137	qNSC2	DOWN
+Notch signaling pathway	0.00810499	qNSC2	DOWN
+Glial cell development	0.01249709	qNSC2	DOWN
+Glial cell differentiation	4.21E-07	qNSC2	UP
+Oligodendrocyte differentiation	2.13E-05	qNSC2	UP
+Long-term memory	2.24E-05	qNSC2	UP
+Neuron apoptotic process	4.56E-05	qNSC2	UP
+Aging	0.001271418	qNSC2	UP
+Amyloid precursor protein catabolic process	0.00370883	qNSC2	UP

@@ -1,0 +1,11 @@
+Description	pvalue	Count	Group
+Chaperone-mediated protein complex assembly	2.28E-05	7	qNSC1
+Wnt signaling pathway	0.000226384	44	qNSC1
+Response to interleukin-1	0.000380912	18	qNSC1
+Mitotic spindle assembly	0.001099353	10	qNSC1
+G2/M transition of mitotic cell cycle	0.004614172	23	qNSC1
+Mitotic cell cycle	0.000304718	20	qNSC2
+Ubiquitin-dependent ERAD pathway	0.000543768	10	qNSC2
+Type I interferon production	0.000730304	15	qNSC2
+Macroautophagy	0.001531482	21	qNSC2
+Activation of MAPKK activity	0.003196162	7	qNSC2

@@ -1,0 +1,61 @@
+Description	pvalue	Celltype	Group
+axon guidance	2.06E-07	pNSC	UP
+neuron apoptotic process	2.94E-06	pNSC	UP
+dendrite morphogenesis	6.54E-06	pNSC	UP
+cellular response to hypoxia	8.05E-06	pNSC	UP
+calcium ion transport	1.10E-05	pNSC	UP
+focal adhesion assembly	4.42E-05	pNSC	UP
+neuron migration	5.32E-05	pNSC	UP
+long-term synaptic potentiation	0.00015724	pNSC	UP
+nitric oxide mediated signal transduction	0.000229448	pNSC	UP
+insulin secretion	0.000282844	pNSC	UP
+maintenance of sister chromatid cohesion	1.67E-05	pNSC	DOWN
+regulation of glycolytic process	7.79E-05	pNSC	DOWN
+response to heat	9.71E-05	pNSC	DOWN
+maintenance of mitotic sister chromatid cohesion	0.000114826	pNSC	DOWN
+cell cycle	0.000335427	pNSC	DOWN
+macroautophagy	0.000753773	pNSC	DOWN
+cellular response to nerve growth factor stimulus	0.001002765	pNSC	DOWN
+central nervous system development	0.002413415	pNSC	DOWN
+response to interleukin-1	0.002913942	pNSC	DOWN
+Wnt signaling pathway	0.006867693	pNSC	DOWN
+myelination	4.45E-08	aNSC	UP
+neuron projection morphogenesis	1.91E-06	aNSC	UP
+cell-substrate junction assembly	8.82E-06	aNSC	UP
+cell morphogenesis involved in differentiation	9.51E-06	aNSC	UP
+axon ensheathment	4.18E-05	aNSC	UP
+regulation of establishment of cell polarity	4.52E-05	aNSC	UP
+central nervous system myelination	6.38E-05	aNSC	UP
+glial cell differentiation	0.000291465	aNSC	UP
+vesicle-mediated transport in synapse	0.001649305	aNSC	UP
+neuron migration	0.009882125	aNSC	UP
+cellular response to stress	1.69E-06	aNSC	DOWN
+neurogenesis	2.70E-05	aNSC	DOWN
+chaperone-mediated autophagy	3.04E-05	aNSC	DOWN
+axonogenesis	3.09E-05	aNSC	DOWN
+synaptic transmission, glutamatergic	8.06E-05	aNSC	DOWN
+regulation of synapse organization	0.000127948	aNSC	DOWN
+response to heat	0.000180078	aNSC	DOWN
+positive regulation of synaptic transmission	0.000232671	aNSC	DOWN
+forebrain development	0.000845234	aNSC	DOWN
+axon development	0.001550063	aNSC	DOWN
+neuron projection morphogenesis	3.58E-11	NB	UP
+synapse assembly	1.74E-09	NB	UP
+neurotransmitter secretion	4.87E-09	NB	UP
+dendritic spine morphogenesis	6.67E-09	NB	UP
+glutamate receptor signaling pathway	8.31E-09	NB	UP
+potassium ion transport	6.57E-07	NB	UP
+regulation of neurotransmitter levels	1.82E-06	NB	UP
+regulation of synaptic plasticity	3.03E-06	NB	UP
+insulin secretion	3.59E-06	NB	UP
+long-term synaptic potentiation	1.24E-05	NB	UP
+cellular response to stress	2.02E-20	NB	DOWN
+cellular response to heat	4.46E-14	NB	DOWN
+cell cycle G2/M phase transition	3.09E-11	NB	DOWN
+mitotic cell cycle phase transition	2.61E-10	NB	DOWN
+stem cell differentiation	8.15E-09	NB	DOWN
+macroautophagy	1.32E-08	NB	DOWN
+proteasomal protein catabolic process	4.79E-08	NB	DOWN
+chromosome organization	2.03E-07	NB	DOWN
+Wnt signaling pathway	2.37E-06	NB	DOWN
+autophagy	4.20E-06	NB	DOWN
