@@ -92,8 +92,8 @@ library(Augur)
 library(gg.gap)
 library(SCopeLoomR)
 
-# — 1 Fig1: Single-nucleus transcriptomic atlas of the human hippocampus across different ages and after stroke injury -----------------------------------------------------------
-# —— 1.1 Fig1B Atlas umap -----------------------------------------------------------
+# — 1 Figure 1-Source Code 1: Single-nucleus transcriptomic atlas of the human hippocampus across different ages and after stroke injury -----------------------------------------------------------
+# —— 1.1 Figure 1B Atlas umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -116,7 +116,7 @@ color16<-c("#4DBBD5B2","#6ab04c","#9196f7","#DC0000B2","#00A087B2",
           strip.switch.pad.grid = element_blank())+NoLegend())
 ggsave("figure/Fig1B.Atlas_umap.pdf",p1,width = 9,height = 9)
 
-# —— 1.2 Fig1C Cell marker bubble plot -----------------------------------------------------------
+# —— Figure 1C Cell marker bubble plot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -149,7 +149,7 @@ result<-pp$data %>% {colnames(.)<-c("avg.exp","Percent Expressed","Gene","Cluste
     theme(axis.text=element_text(size=15, color="black"),legend.position = "top",axis.title = element_blank()) + RotatedAxis())
 ggsave("figure/Fig1C.Cell_marker.bubble_plot.pdf",p1,width = 12,height = 6.5)
 
-# —— 1.3 Fig1D Cell marker feature plot -----------------------------------------------------------
+# —— Figure 1D Cell marker feature plot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -174,7 +174,7 @@ gene<-c("ALDH1L1","GFAP","PAX6","VIM","STMN2","SV2B","OLIG1","CSF1R","GAD1","REL
 
 ggsave("figure/Fig1D.Cell_marker.FeaturePlot.pdf",p,width = 24,height = 8)
 
-# —— 1.4 Fig1E Atlas umap split by Stage -----------------------------------------------------------
+# —— 1.4 Figure 1E Atlas umap split by Stage -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -198,8 +198,8 @@ color16<-c("#4DBBD5B2","#6ab04c","#9196f7","#DC0000B2","#00A087B2",
     facet_wrap(~tmp_Sobj$Stage,nrow = 1)+NoLegend())
 ggsave("figure/Fig1E.Atlas_umap.split_by_Stage.pdf",p1,width = 16,height = 6)
 
-# — 2 FigS1 Related to Fig1: Cell atlas of human hippocampus across different ages and post stoke-induced injury -----------------------------------------------------------
-# —— 2.1 FigS1AB QC Violin -----------------------------------------------------------
+# — 2 Figure 1-Figure Supplement 1–Source Code 1: Cell atlas of human hippocampus across different ages and post stoke-induced injury -----------------------------------------------------------
+# —— 2.1 Figure 1- Figure Supplement 1AB QC Violin -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 
@@ -223,7 +223,7 @@ p2<-VlnPlot(data.filt, features = c("nFeature_RNA","nCount_RNA","percent.mito"),
 ggsave("figure/Fig1E.Atlas_umap.split_by_Stage.pdf",p,width = 17,height = 8)
 
 
-# —— 2.3 FigS1C Atlas umap(3D) -----------------------------------------------------------
+# —— 2.3 Figure 1- Figure Supplement 1C Atlas umap(3D) -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -273,7 +273,7 @@ plot_ly(data = plot.data,
         text=~label, #This is that extra column we made earlier for which we will use for cell ID
         hoverinfo="text")
 
-# —— 2.4 FigS1D Atlas umap color by samples -----------------------------------------------------------
+# —— 2.4 Figure 1- Figure Supplement 1D Atlas umap color by samples -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -292,7 +292,7 @@ color10<-c("#4DBBD5B2","#00A087B2","#FF82AB","#9196f7","#6ab04c","#DC0000B2",
           strip.switch.pad.grid = element_blank()))
 ggsave("figure/FigS1D.Atlas_umap.color_by_samples.pdf",p1,width = 10,height = 9)
 
-# —— 2.5 FigS1E Top marker heatmap -----------------------------------------------------------
+# —— 2.5 Figure 1- Figure Supplement 1E Top marker heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -353,7 +353,7 @@ png(file = filename,width = 5400,height = 2700,res=300)
 ht
 dev.off()
 
-# —— 2.6 FigS1F Mean gene summary by celltype -----------------------------------------------------------
+# —— 2.6 Figure 1- Figure Supplement 1F Mean gene summary by celltype -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -398,8 +398,8 @@ color16<-c("#4DBBD5B2","#6ab04c","#9196f7","#DC0000B2","#00A087B2",
     facet_wrap(~Major,nrow = 2)+NoLegend())
 ggsave("figure/FigS1F.Mean_gene_summary.by_celltype.pdf",p1,width = 12,height = 4)
 
-# — 3 Fig2: Confirmation of neurogenic lineage and dissecting of NSC molecular heterogeneity in the postnatal human hippocampus -----------------------------------------------------------
-# —— 3.1 Fig2A Cross-species comparison umap -----------------------------------------------------------
+# — 3 Figure 2-Source Code 1: Confirmation of neurogenic lineage and dissecting of NSC molecular heterogeneity in the postnatal human hippocampus -----------------------------------------------------------
+# —— 3.1 Figure 2A Cross-species comparison umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -431,7 +431,7 @@ ggsave(filename = "figure/Fig2A.Cross-species_comparison.umap.pdf",pd,width = 18
 
 
 
-# —— 3.2 Fig2B Hochgerner_H.et_al.2018 Marker check -----------------------------------------------------------
+# —— 3.2 Figure 2B Hochgerner_H.et_al.2018 Marker check -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -464,7 +464,7 @@ result<-pp$data %>% {colnames(.)<-c("avg.exp","Percent Expressed","Gene","Cluste
     theme(axis.text=element_text(size=15, color="black"),legend.position = "top",axis.title = element_blank()) + RotatedAxis())
 ggsave("figure/Fig2B.Hochgerner_H.et_al.2018.Marker_check.pdf",p1,width = 10,height = 3.5)
 
-# —— 3.3 Fig2C AS_qNSC subtype umap -----------------------------------------------------------
+# —— 3.3 Figure 2C AS_qNSC subtype umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -507,18 +507,18 @@ load("../result/astrocytes.combined.Celltype.RData")
 
 (p1<-DimPlot(astrocytes.combined,group.by = "Celltype",raster = T,pt.size = 1,
              cols = c("#795548","#40407a","#DC0000B2"),label = T,label.size = 6)&
-  tidydr::theme_dr(xlength = 0.2,ylength = 0.2,
-                   arrow = grid::arrow(length = unit(0.15, "inches"), type = "closed"))&
-  theme(panel.grid = element_blank(),plot.title = element_blank(),
-        # legend.position = "none",
-        axis.title.x = element_text(hjust = 0),axis.title.y = element_text(hjust = 0),
-        axis.title.y.right = element_text(size = 15,hjust = 0.5,face = "bold"))&
-  NoLegend())
+    tidydr::theme_dr(xlength = 0.2,ylength = 0.2,
+                     arrow = grid::arrow(length = unit(0.15, "inches"), type = "closed"))&
+    theme(panel.grid = element_blank(),plot.title = element_blank(),
+          # legend.position = "none",
+          axis.title.x = element_text(hjust = 0),axis.title.y = element_text(hjust = 0),
+          axis.title.y.right = element_text(size = 15,hjust = 0.5,face = "bold"))&
+    NoLegend())
 
 ggsave("figure/Fig2C.AS_qNSC_subtype.Umap.pdf",p1,width = 4.5,height = 4.5)
 
 
-# —— 3.4 Fig2D AS_qNSC subtype top marker heatmap -----------------------------------------------------------
+# —— 3.4 Figure 2D AS_qNSC subtype top marker heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -536,7 +536,7 @@ top3 <- all.markers %>% group_by(cluster) %>% do(head(.,n=10))
 
 ggsave("figure/Fig2D.AS_qNSC_subtype.top_marker.heatmap.pdf",p4,width = 12,height = 8)
 
-# —— 3.5 Fig2EF AS_qNSC subtype Addmodulescore -----------------------------------------------------------
+# —— 3.5 Figure 2EF AS_qNSC subtype Addmodulescore -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 load("../result/astrocytes.combined.Celltype.RData")
@@ -617,7 +617,7 @@ ggsave("figure/Fig2EF.AS_qNSC_subtype.Addmodulescore.png",p,width = 16,height = 
 ggsave("figure/Fig2EF.AS_qNSC_subtype.Addmodulescore.pdf",p,width = 16,height = 5)
 
 
-# —— 3.6 Fig2G AS_qNSC subtype Featureplot -----------------------------------------------------------
+# —— 3.6 Figure 2G AS_qNSC subtype Featureplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 load("../result/astrocytes.combined.Celltype.RData")
@@ -637,7 +637,7 @@ Gene<-c("S100B","GFAP","LPAR1","HOPX","STMN1","PROX1","SIRT2","ST18")
     NoLegend())
 
 ggsave("figure/Fig2G.AS_qNSC_subtype.Featureplot.pdf",p,width = 14,height = 8)
-# —— 3.7 Fig2HI aNSC_pNSC top1000 GOBP -----------------------------------------------------------
+# —— 3.7 Figure 2HI aNSC_pNSC top1000 GOBP -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 
@@ -695,7 +695,7 @@ p2<-tmp_df %>%
 
 ggsave("figure/Fig2HI.aNSC_pNSC.top1000_GOBP.barplot.pdf",p,width = 16,height = 5)
 
-# —— 3.8 Fig2J Cell-cycle phases umap -----------------------------------------------------------
+# —— 3.8 Figure 2J Cell-cycle phases umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -717,8 +717,8 @@ tmp_obj <- subset(tmp_Sobj,subset=Minor2%in%cell)
 
 ggsave("figure/Fig2J.Cell-cycle_phases.umap.pdf",p1,width = 7,height = 6)
 
-# — 4 FigS2 Related to Fig2: Distinguish qNSCs and astrocytes molecular heterogeneity in the postnatal human hippocampus. -----------------------------------------------------------
-# —— 4.1 FigS2A AS_qNSC subtype Addmodulescore split by stage -----------------------------------------------------------
+# — 4 Figure 2-Figure Supplement 1–Source Code 1: Distinguish qNSCs and astrocytes molecular heterogeneity in the postnatal human hippocampus -----------------------------------------------------------
+# —— 4.1 Figure 2-Figure Supplement 1A AS_qNSC subtype Addmodulescore split by stage -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 load("../result/astrocytes.combined.Celltype.RData")
@@ -815,7 +815,7 @@ ppp<-Reduce("+",tmp_Plist2)+plot_layout(ncol = 4)
 
 ggsave(paste("figure/FigS2A.AS_qNSC_subtype.Addmodulescore.split_by_stage.pdf",sep = ""),ppp,width = 18,height = 16)
 
-# —— 4.2 FigS2B AS_qNSC subtype cellpercent split by stage -----------------------------------------------------------
+# —— 4.2 Figure 2-Figure Supplement 1B AS_qNSC subtype cellpercent split by stage -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -887,7 +887,7 @@ levels(subdf$Group) %<>% {.[.%in%"Injury"]<-"I";.}
     facet_grid(~Group)+NoLegend()+RotatedAxis())
 ggsave("figure/FigS2B.AS_qNSC_subtype.cellpercent.split_by_stage.pdf",p,width = 8,height = 4)
 
-# —— 4.3 FigS2C qNSC2_OLG corr heatmap -----------------------------------------------------------
+# —— 4.3 Figure 2-Figure Supplement 1C qNSC2_OLG corr heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -904,7 +904,7 @@ ht_df<-cluster.averages[["integrated"]] %>% cor()
                        color = colorRampPalette(c("#72bcd5", "#F7F5F2", "#FD5D5D"))(30)))
 
 ggsave("figure/FigS2C.qNSC2_OLG.cor_heatmap.pdf",p,width = 6,height = 6)
-# —— 4.4 FigS2D pNSC vs aNSC DEGs heatmap -----------------------------------------------------------
+# —— 4.4 Figure 2-Figure Supplement 1D pNSC vs aNSC DEGs heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -924,7 +924,7 @@ tmp_G<-all.markers %>% .[order(.$Diff,abs(.$avg_log2FC),decreasing = T),] %>% gr
     scale_fill_gradientn(colors = colorRampPalette(c("#1a2a6c", "white", "#c21e20"))(20),na.value = "white"))
 ggsave(paste("figure/FigS2D.pNSC_vs_aNSC.DEGs_heatmap.pdf",sep = ""),p,width = 10,height = 6)
 
-# —— 4.5 FigS2E pNSC vs aNSC DEGs GOBP barplot -----------------------------------------------------------
+# —— 4.5 Figure 2-Figure Supplement 1E pNSC vs aNSC DEGs GOBP barplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 
 rm(list=setdiff(ls(),"tmp_Sobj"))
@@ -981,8 +981,8 @@ tmp_df <- read.delim("data/FigS2E.aNSC_vs_pNSC.DEGs_GOBP.xls")
 
 ggsave(paste("figure/FigS2E.pNSC_vs_aNSC.DEGs_GOBP.barplot.pdf",sep = ""),pp,width = 5,height = 6)
 
-# — 5 Fig3: Discovery of novel markers distinguishing various types of NSCs and NBs in the human hippocampus -----------------------------------------------------------
-# —— 5.1 Fig3AB find new marker by scHPF & Findallmarker -----------------------------------------------------------
+# — 5 Figure 3-Source Code 1: Discovery of novel markers distinguishing various types of NSCs and NBs in the human hippocampus -----------------------------------------------------------
+# —— 5.1 Figure 3AB find new marker by scHPF & Findallmarker -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1067,7 +1067,7 @@ ggsave(filename = "figure/Fig3A.find_new_marker.by_scHPF.bubble.pdf",p,width = 2
 
 
 
-# —— 5.3 Fig3C New marker Featureplot -----------------------------------------------------------
+# —— 5.3 Figure 3C New marker Featureplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1087,19 +1087,19 @@ tmp_G <- read.delim("data/Fig3C.gene.for_feature.v6.list")
 library(tidydr)
 tmp_Sobj<-subseurat
 (p<-FeaturePlot(tmp_Sobj, features = tmp_G$Gene,pt.size = 1,raster = T,
-               ncol = 4,
-               reduction = "umap",label = F,label.size = 5)&
-  scale_color_gradientn(colors=rev(c("#810000","#CE1212","#F05454","#ffd06f","#ffe6b7","grey90")))&
-  theme_dr(xlength = 0.2,
-           ylength = 0.2,
-           arrow = grid::arrow(length = unit(0.15, "inches"), type = "closed"))&
-  theme(panel.grid = element_blank(),legend.position = "none",
-        axis.title.x = element_text(hjust = 0),axis.title.y = element_text(hjust = 0),
-        plot.title = element_text(hjust = 0.5,size = 15,face = "bold")))
+                ncol = 4,
+                reduction = "umap",label = F,label.size = 5)&
+    scale_color_gradientn(colors=rev(c("#810000","#CE1212","#F05454","#ffd06f","#ffe6b7","grey90")))&
+    theme_dr(xlength = 0.2,
+             ylength = 0.2,
+             arrow = grid::arrow(length = unit(0.15, "inches"), type = "closed"))&
+    theme(panel.grid = element_blank(),legend.position = "none",
+          axis.title.x = element_text(hjust = 0),axis.title.y = element_text(hjust = 0),
+          plot.title = element_text(hjust = 0.5,size = 15,face = "bold")))
 
 ggsave(filename = "figure/Fig3C.New_marker.Featureplot.pdf",p,width = 12,height = 8)
 
-# —— 5.4 Fig3DF NB_GC markers heatmap -----------------------------------------------------------
+# —— 5.4 Figure 3DF NB_GC markers heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1125,7 +1125,7 @@ cluster.averages <- AverageExpression(subseurat,assays = "RNA",group.by=tmp_Iden
                        color = colorRampPalette(rev(c("#810000","#CE1212","#F05454","#ffd06f","#ffe6b7","#aadce0","#72bcd5","#528fad","#376795","#1e466e")))(30)))
 ggsave(filename = "figure/Fig3DF.NB_GC.markers_heatmap.pdf",p,width = 16,height = 3)
 
-# —— 5.5 Fig3E Percent & Expression pointplot -----------------------------------------------------------
+# —— 5.5 Figure 3E Percent & Expression pointplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1166,8 +1166,8 @@ pp<-ggMarginal(p, type="histogram")
 
 ggsave(filename = "figure/Fig3E.Percent_Expression.pointplot.pdf",pp,width = 6,height = 6)
 
-# — 6 FigS3 Related to Fig3: Reported neuroblast genes were widely distributed in the adult human interneurons. -----------------------------------------------------------
-# —— 6.1 FigS3A corr with ref heatmap -----------------------------------------------------------
+# — 6 Figure 3-Figure Supplement 1–Source Code 1: Reported neuroblast genes were widely distributed in the adult human interneurons -----------------------------------------------------------
+# —— 6.1 Figure 3- Figure Supplement 1A corr with ref heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1280,7 +1280,7 @@ ht_df<-cluster.averages[["integrated"]] %>% cor()
 p<-as.ggplot(p1)|as.ggplot(p2)|as.ggplot(p3)
 ggsave("figure/FigS3A.corr_with_ref.heatmap.pdf",p,width = 18,height = 4)
 
-# —— 6.2 FigS3BC NB GABA-IN specific bubble split by age -----------------------------------------------------------
+# —— 6.2 Figure 3- Figure Supplement 1BC NB GABA-IN specific bubble split by age -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1381,9 +1381,9 @@ for (i in 1:length(age)) {
 p<-(p1+p2+p3+p4+p5+p6+p7+p8)+plot_layout(ncol = 4,guides = "collect")&theme(legend.position = "top")
 ggsave("figure/FigS3BC.NB_GABA-IN_specific.bubble.split_by_age.part2.pdf",p,width = 20,height = 6,dpi = 300)
 
-# — 7 FigS4 Related to Fig3: Neuroblast marker DCX were expressed in interneuron in macaque hippocampus of 3 months. -----------------------------------------------------------
-# — 8 Fig4: The transcriptional dynamics predicated by RNA velocity and pseudotime reconstruction revealed developmental potentials of NSC in the neonatal human hippocampus -----------------------------------------------------------
-# —— 8.1 Fig4A neonatal NSCs RNA velocity -----------------------------------------------------------
+# — 7 Figure 3-Figure Supplement 2–Source Code 1: Neuroblast marker DCX were expressed in interneuron in macaque hippocampus of 3 months -----------------------------------------------------------
+# — 8 Figure 4-Source Code 1: The transcriptional dynamics predicated by RNA velocity and pseudotime reconstruction revealed developmental potentials of NSC in the neonatal human hippocampus -----------------------------------------------------------
+# —— 8.1 Figure 4A neonatal NSCs RNA velocity -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1516,7 +1516,7 @@ umap_arrows <- Vresult$garrows %>%
 
 
 ggsave("figure/Fig4A.neonatal_NSCs.RNA_velocity.pdf",p,width = 10,height = 9)
-# —— 8.2 Fig4B qNSC1_qNSC2 vs pNSC DEGs enrichment -----------------------------------------------------------
+# —— 8.2 Figure 4B qNSC1_qNSC2 vs pNSC DEGs enrichment -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1555,7 +1555,7 @@ for (i in c("qNSC1","qNSC2")) {
   term2name <- gobp[,c('GO','Name')]
   ego_BP <- enricher(gene = diff[diff$Diff%in%"DOWN",]$gene,pvalueCutoff = 0.05,pAdjustMethod = "fdr",minGSSize = minGSSize,maxGSSize = maxGSSize,qvalueCutoff = 0.2,TERM2GENE = term2gene,TERM2NAME = term2name)
   query_BP_result<-as.data.frame(ego_BP@result)
-
+  
 }
 
 tmp_df <- read.delim("data/Fig4B.qNSC1_qNSC2_vs_pNSC.GOBP.xls")
@@ -1610,7 +1610,7 @@ tmp_df <- read.delim("data/Fig4B.qNSC1_qNSC2_vs_pNSC.GOBP.xls")
 p<-p1|p2
 ggsave("figure/Fig4B.qNSC1_qNSC2_vs_pNSC.DEGs_enrichment.bar_plot.pdf",p,width = 13.5,height = 4.5,dpi = 500)
 
-# —— 8.3 Fig4CD neonatal pseudotime trajectory & gene expression -----------------------------------------------------------
+# —— 8.3 Figure 4CD neonatal pseudotime trajectory & gene expression -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -1758,7 +1758,7 @@ ggsave("figure/Fig4C.Neonatal_8feature.expr_trajectory.pdf",p,width = 18,height 
 
 
 
-# —— 8.4 Fig4F neonatal pseudotime branch heatmap -----------------------------------------------------------
+# —— 8.4 Figure 4F neonatal pseudotime branch heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 filename<-paste("result/4D.root-pNSC.expr.Doublet_remove.v6.RData",sep = "")
@@ -1859,7 +1859,7 @@ for (i in unique(tmp_genedf$Cluster)) {
 }
 
 
-# —— 8.5 Fig4G neonatal pseudotime branch gene expression -----------------------------------------------------------
+# —— 8.5 Figure 4G neonatal pseudotime branch gene expression -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 load("result/4D.root-pNSC.expr.Doublet_remove.final.RData")
@@ -1876,8 +1876,8 @@ color7<-c("#00A087B2","#DC0000B2","#9196f7","#E7D4B5","#603601")
 ggsave("figure/Fig4G.neonatal.pseudotime_branch.gene_expression.png",p,width = 5,height = 9,dpi = 300)
 ggsave("figure/Fig4G.neonatal.pseudotime_branch.gene_expression.pdf",p,width = 5,height = 9)
 
-# — 9 FigS5 Related to Fig4: Pseudotime reconstruction of the neurogenic lineage development in the neonatal Day 4 human hippocampus. -----------------------------------------------------------
-# —— 9.1 FigS5AB Neurogenic_lineage pseudotime trajectory -----------------------------------------------------------
+# — 9 Figure 4-Figure Supplement 1–Source Code 1: Pseudotime reconstruction of the neurogenic lineage development in the neonatal Day 4 human hippocampus -----------------------------------------------------------
+# —— 9.1 Figure 4-Figure Supplement 1AB Neurogenic_lineage pseudotime trajectory -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -1897,7 +1897,7 @@ color7<-c("#00A087B2","#DC0000B2","#9196f7","#E7D4B5","#603601")
 ggsave("figure/FigS5AB.Neurogenic_lineage.pseudotime_trajectory.png",p,width = 25,height = 5,dpi = 300)
 ggsave("figure/FigS5AB.Neurogenic_lineage.pseudotime_trajectory.pdf",p,width = 25,height = 5)
 
-# —— 9.2 FigS5C N1 N2 specific Marker heatmap -----------------------------------------------------------
+# —— 9.2 Figure 4-Figure Supplement 1C N1 N2 specific Marker heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -2023,7 +2023,7 @@ for (i in unique(tmp_up$Cluster)) {
   
   ego_BP <- enricher(gene = mark_gene,pvalueCutoff = 0.05,pAdjustMethod = "BH",minGSSize = minGSSize,maxGSSize = maxGSSize,qvalueCutoff = 0.2,TERM2GENE = term2gene,TERM2NAME = term2name)
   query_BP_result<-as.data.frame(ego_BP@result)
-
+  
 }
 
 mark_gene<-tmp_up$gene
@@ -2171,7 +2171,7 @@ ph2<-Heatmap(ht_mtx,
 pdf(file = paste("figure/FigS5C.N1_N2.specific_Marker.heatmap.pdf",sep = ""),width = 10,height = 9)
 ph2
 dev.off()
-# —— 9.3 FigS5D N1 N2 specific Marker Featureplot -----------------------------------------------------------
+# —— 9.3 Figure 4-Figure Supplement 1D N1 N2 specific Marker Featureplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2196,7 +2196,7 @@ ggsave("figure/FigS5D.N1_N2.specific_Marker_Featureplot.png",p1,width = 9,height
 ggsave("figure/FigS5D.N1_N2.specific_Marker_Featureplot.pdf",p1,width = 9,height = 8,dpi = 300)
 
 
-# —— 9.4 FigS5E N1 N2 pseudotime branch heatmap -----------------------------------------------------------
+# —— 9.4 Figure 4-Figure Supplement 1E N1 N2 pseudotime branch heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample")
 rm(list=ls())
 
@@ -2219,8 +2219,8 @@ ph<-plot_genes_branched_heatmap(mycds_sub_beam[allgene,],
                                 show_rownames = T) 
 ggsave("figure/FigS5E.N1_N2.pseudotime_branch.heatmap.png",ph$ph_res,width = 10,height = 8)
 
-# — 10 FigS6 Related to Fig4: Differentially expressed genes along the pseudotime of neurogenic lineage in the neonatal human hippocampus. -----------------------------------------------------------
-# —— 10.1 FigS6ABCD Neurogenic_lineage pseudotime branch gene expression -----------------------------------------------------------
+# — 10 Figure 4-Figure Supplement 2–Source Code 1: Differentially expressed genes along the pseudotime of neurogenic lineage in the neonatal human hippocampus -----------------------------------------------------------
+# —— 10.1 Figure 4-Figure Supplement 2ABCD Neurogenic_lineage pseudotime branch gene expression -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample")
 rm(list=ls())
 load("result/4D.root-pNSC.expr.Doublet_remove.final.RData")
@@ -2267,8 +2267,8 @@ p<-p1/p2/p3/p4
 ggsave("figure/FigS6ABCD.Neurogenic_lineage.pseudotime_branch.gene_expression.png",p,width = 10,height = 8,dpi = 300)
 ggsave("figure/FigS6ABCD.Neurogenic_lineage.pseudotime_branch.gene_expression.pdf",p,width = 10,height = 8)
 
-# — 11 Fig5: Age-dependent molecular alterations of the hippocampal NSCs and NBs -----------------------------------------------------------
-# —— 11.1 Fig5A NSCs_NB Age-dependent umap -----------------------------------------------------------
+# — 11 Figure 5-Source Code 1: Age-dependent molecular alterations of the hippocampal NSCs and NBs -----------------------------------------------------------
+# —— 11.1 Figure 5A NSCs_NB Age-dependent umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2304,7 +2304,7 @@ levels(sub$Subtype) %<>% {.[.%in%c("GC1","GC2")]<-"GC";.}
     facet_wrap(~sub$Stage,nrow = 1)+NoLegend())
 ggsave("figure/Fig5A.NSCs_NB.Age-dependent.umap.pdf",p1,width = 14,height = 6,dpi = 500)
 
-# —— 11.2 Fig5B NSCs_NB Age-dependent cellpercent -----------------------------------------------------------
+# —— 11.2 Figure 5B NSCs_NB Age-dependent cellpercent -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2366,7 +2366,7 @@ subdf<-subdf %>% group_by(Group2) %>% dplyr::summarise(mean = mean(Percent),sd=s
     facet_wrap(~Cluster,nrow = 1)+NoLegend())
 ggsave("figure/Fig5B.NSCs_NB.Age-dependent.cellpercent.pdf",p,width = 8,height = 5)
 
-# —— 11.3 Fig5C NSCs_NB Age-dependent marker bubble -----------------------------------------------------------
+# —— 11.3 Figure 5C NSCs_NB Age-dependent marker bubble -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2394,7 +2394,7 @@ p<-DotPlot(object = sub, features = gene, group.by  = "Stage")
 
 plotfile = paste('figure/Fig5C.NSCs_NB.Age-dependent_marker.bubble.pdf',sep = "")
 ggsave(filename = plotfile,p3,width = 4.8,height = 2.5)
-# —— 11.5 Fig5E qNSC1_qNSC2 Age-dependent DEGs violinplot -----------------------------------------------------------
+# —— 11.5 Figure 5E qNSC1_qNSC2 Age-dependent DEGs violinplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2436,7 +2436,7 @@ gene<-c("CASC15","TNC","GAP43","CCND2","SOX2","SOX4","HOPX","VIM","MBP","PLP1","
 (p<-(p1/p2))
 ggsave(filename = "figure/Fig5E.qNSC1_qNSC2.Age-dependent_DEGs.violinplot.pdf",p,width = 8,height = 12)
 
-# —— 11.6 Fig5F qNSC1_qNSC2 Age-dependent GOBP barplot  -----------------------------------------------------------
+# —— 11.6 Figure 5F qNSC1_qNSC2 Age-dependent GOBP barplot  -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 
@@ -2494,8 +2494,8 @@ for (i in unique(tmp_df$Celltype)) {
 
 p<-Reduce("|",tmp_Plist)+plot_layout(ncol = 2)
 ggsave("figure/Fig5F.qNSC1_qNSC2.Age-dependent_GOBP.barplot.pdf",p,width = 12.5,height = 4.5,dpi = 500)
-# — 12 FigS7 Related to Fig5: Alterations of the neurogenic lineage related genes in human hippocampus during aging. -----------------------------------------------------------
-# —— 12.1 FigS7A pNSC_aNSC_NB marker bubbleplot split by age -----------------------------------------------------------
+# — 12 Figure 5-Figure Supplement 1–Source Code 1: Alterations of the neurogenic lineage related genes in human hippocampus during aging -----------------------------------------------------------
+# —— 12.1 Figure 5-Figure Supplement 1A pNSC_aNSC_NB marker bubbleplot split by age -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2534,8 +2534,8 @@ for (i in c(3,1,2)) {
 p<-Reduce("+",tmp_Plist)+plot_layout(nrow = 1,guides = "collect")
 ggsave("figure/FigS7A.pNSC_aNSC_NB.marker.bubbleplot.split_by_age.pdf",p,width = 16,height = 5)
 
-# — 13 FigS8 Related to Fig5: Differentially expressed genes and enrichment GO terms in pNSC, aNSC, and NB during aging, respectively. -----------------------------------------------------------
-# —— 13.1 FigS8ADG pNSCs aNSCs NB Age-dependent DEGs -----------------------------------------------------------
+# — 13 Figure 5-Figure Supplement 2–Source Code 1: Differentially expressed genes and enrichment GO terms in pNSC, aNSC, and NB during aging, respectively -----------------------------------------------------------
+# —— 13.1 Figure 5-Figure Supplement 2ADG pNSCs aNSCs NB Age-dependent DEGs -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2591,7 +2591,7 @@ for (tmp_cell in cell) {
   ggsave(paste("figure/FigS8.",tmp_cell,".Age-dependent_DEGs.heatmap.pdf",sep = ""),pp,width = 9,height = 6)
   # ggsave(paste("figure/FigS8.",tmp_cell,".Age-dependent_DEGs.heatmap.png",sep = ""),pp,width = 9,height = 6)
 }
-# —— 13.2 FigS8BCEFHI pNSCs aNSCs NB Age-dependent GOBP -----------------------------------------------------------
+# —— 13.2 Figure 5-Figure Supplement 2BCEFHI pNSCs aNSCs NB Age-dependent GOBP -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample")
 rm(list=ls())
 
@@ -2647,8 +2647,8 @@ for (tmp_cell in unique(tmp_df$Celltype)) {
   ggsave(paste("figure/FigS8.",tmp_cell,".Age-dependent_GOBP.bar.pdf",sep = ""),p,width = 7,height = 6)
   
 }
-# — 14 Fig6: The transcriptomic signatures of the activated neurogenic lineage in the adult human injured hippocampus induced by stroke -----------------------------------------------------------
-# —— 14.1 Fig6A NSCs_NB Injury-related umap -----------------------------------------------------------
+# — 14 Figure 6-Source Code 1: The transcriptomic signatures of the activated neurogenic lineage in the adult human injured hippocampus induced by stroke -----------------------------------------------------------
+# —— 14.1 Figure 6A NSCs_NB Injury-related umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2682,7 +2682,7 @@ levels(sub$Subtype) %<>% {.[.%in%c("GC1","GC2")]<-"GC";.}
           strip.switch.pad.grid = element_blank())+
     facet_wrap(~sub$Stage,nrow = 1)+NoLegend())
 ggsave("figure/Fig6A.NSCs_NB.Injury-related.umap.pdf",p1,width = 18,height = 6,dpi = 500)
-# —— 14.2 Fig6C NSCs_NB Injury-related Addmodulescore -----------------------------------------------------------
+# —— 14.2 Figure 6C NSCs_NB Injury-related Addmodulescore -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2833,7 +2833,7 @@ p1<-Reduce("+",tmp_Plist)+plot_layout(ncol = 1)
 (p<-(p1|p2))
 ggsave("figure/Fig6C.NSCs_NB.Injury-related.Addmodulescore.pdf",p,width = 12,height = 5)
 
-# —— 14.3 Fig6D NSCs_NB Injury-related cellpercent -----------------------------------------------------------
+# —— 14.3 Figure 6D NSCs_NB Injury-related cellpercent -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2899,7 +2899,7 @@ levels(subdf$Group) %<>% {.[.%in%"Injury"]<-"I";.}
     facet_wrap(~Cluster,nrow = 1)+NoLegend())
 ggsave("figure/Fig6D.NSCs_NB.Injury-related.cellpercent.pdf", plot = p,width = 7.8,height = 4)
 
-# —— 14.4 Fig6E NSCs_NB Injury-related pseudotime trajectory -----------------------------------------------------------
+# —— 14.4 Figure 6E NSCs_NB Injury-related pseudotime trajectory -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -2968,7 +2968,7 @@ for (i in c(0.1)) {
   
   filename<-paste("result/48y.qNSC_reactive_NSC.root-pNSC.expr",i,".v4.RData",sep = "")
   save(disp.genes,mycds,file = filename)
-
+  
 }
 
 
@@ -2983,7 +2983,7 @@ levels(mycds$type) %<>% {.[.%in%c("reactive NSC2","reactive NSC3")]<-"pNSC";.}
 ggsave("figure/Fig6E.NSCs_NB.Injury-related.pseudotime.trajectory.pdf",p2,width = 6,height = 4)
 
 
-# —— 14.5 Fig6F NSCs_NB Injury-related pseudotime branch heatmap -----------------------------------------------------------
+# —— 14.5 Figure 6F NSCs_NB Injury-related pseudotime branch heatmap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -3058,7 +3058,7 @@ for (i in unique(tmp_genedf$Cluster)) {
   # i=1
   gene <- tmp_genedf[tmp_genedf$Cluster%in%i,,drop=F] %>% rownames()
   df<-data.frame(gene=gene,cluster=paste("cluster",i,sep = ""))
-
+  
   mark_gene<-gene
   ## BP
   term2gene <- gobp[!is.na(gobp$ENSEMBL),] %>% left_join(.,id2name,by=c("ENSEMBL"="gene_id")) %>% .[,c('GO','gene_name')]
@@ -3067,9 +3067,9 @@ for (i in unique(tmp_genedf$Cluster)) {
   
   ego_BP <- enricher(gene = mark_gene,pvalueCutoff = 0.05,pAdjustMethod = "BH",minGSSize = minGSSize,maxGSSize = maxGSSize,qvalueCutoff = 0.2,TERM2GENE = term2gene,TERM2NAME = term2name)
   query_BP_result<-as.data.frame(ego_BP@result)
-
+  
 }
-# —— 14.6 Fig6G NSCs_NB Injury-related DEGs Bubble -----------------------------------------------------------
+# —— 14.6 Figure 6G NSCs_NB Injury-related DEGs Bubble -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"SeuratObj"))
 load("result/astrocytes.combined.after_cluster.res0.1-1.v4.RData")
@@ -3118,7 +3118,7 @@ result<-pp$data %>% {colnames(.)<-c("avg.exp","Percent Expressed","Gene","Cluste
     theme(axis.text=element_text(size=13, color="black"),legend.position = "top",axis.title = element_blank()) + RotatedAxis())
 ggsave("figure/Fig6G.NSCs_NB.Injury-related.DEGs_Bubble.pdf",p1,width = 7.5,height = 3.5)
 
-# —— 14.7 Fig6H NSCs_NB Injury-related DEGs enrichment -----------------------------------------------------------
+# —— 14.7 Figure 6H NSCs_NB Injury-related DEGs enrichment -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 
@@ -3148,8 +3148,8 @@ p1<-tmp_df %>%
         strip.text = element_text(size =16,face = "bold",colour = "white"))+
   facet_wrap(Group~.,strip.position = "left",dir="v")
 ggsave("figure/Fig6H.NSCs_NB.Injury-related.DEGs_enrichment.pdf",p1,width = 9.2,height = 4)
-# — 15 FigS9 Related to Fig6: Stroke injury induced hippocampal cell apoptosis, astrocyte reactivation and neuronal damages. -----------------------------------------------------------
-# —— 15.1 FigS9A GC_IN Injury-related GOBP barplot -----------------------------------------------------------
+# — 15 Figure 6-Figure Supplement 1–Source Code 1: Stroke injury induced hippocampal cell apoptosis, astrocyte reactivation and neuronal damages -----------------------------------------------------------
+# —— 15.1 Figure 6-Figure Supplement 1A GC_IN Injury-related GOBP barplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -3219,7 +3219,7 @@ bubble<-df %>% .[order(.$Count),] %>%
 (p<-p1|p2)
 ggsave("figure/FigS9A.GC_IN.Injury-related.GOBP.barplot.pdf",p,width = 18,height = 3)
 
-# —— 15.2 FigS9B GC_IN Injury-related DEGs violinplot -----------------------------------------------------------
+# —— 15.2 Figure 6-Figure Supplement 1B GC_IN Injury-related DEGs violinplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 (list<-load("data/SeuratObj.Celltype_Minor3.Stage.v11.RData"))
@@ -3233,8 +3233,8 @@ DimPlot(SubObj,group.by = "Celltype",split.by = "Stage")
              pt.size = 0, combine = T)&coord_flip()&theme(axis.title = element_blank())&geom_boxplot(alpha=.2,outlier.shape = NA))
 
 ggsave("figure/FigS9B.GC_IN.Injury-related.DEGs.violinplot.pdf",p3,width = 18,height = 4)
-# — 16 FigS10 Related to Fig6: Initially defined pNSCs and aNSCs from stroke-injured hippocampus contained reactive astrocytes and reactivated NSCs. -----------------------------------------------------------
-# —— 16.1 FigS10ABC Injury-related reactive subtype umap -----------------------------------------------------------
+# — 16 Figure 6-Figure Supplement 2–Source Code 1: Initially defined pNSCs and aNSCs from stroke-injured hippocampus contained reactive astrocytes and reactivated NSCs -----------------------------------------------------------
+# —— 16.1 Figure 6-Figure Supplement 2ABC Injury-related reactive subtype umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -3289,7 +3289,7 @@ df <- df[order(df$Cluster),]
 (p<-(p1|p2|p3)+plot_layout(widths = c(1,2,1.5)))
 
 ggsave("figure/FigS10ABC.Injury-related.reactive_subtype.umap_heatmap_cellpercent.pdf",p,width = 16,height = 4.5)
-# —— 16.2 FigS10D Injury-related reactive subtype Featureplot -----------------------------------------------------------
+# —— 16.2 Figure 6-Figure Supplement 2D Injury-related reactive subtype Featureplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 load("result/NSC.combined.after_cluster.res0.1-1.v4.RData")
@@ -3305,7 +3305,7 @@ Gene<-c("VIM","HOPX","LPAR1","SOX2","STMN1","OSMR","TIMP1","LGALS3")
           axis.title = element_blank(),axis.text = element_blank(),axis.ticks = element_blank(),axis.line = element_blank()))
 
 ggsave("figure/FigS10D.Injury-related.reactive_subtype.Featureplot.pdf",p,width = 12,height = 6)
-# —— 16.5 FigS10E NSCs_NB Injury-related pseudotime gene expression -----------------------------------------------------------
+# —— 16.3 Figure 6-Figure Supplement 2E NSCs_NB Injury-related pseudotime gene expression -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/")
 rm(list=setdiff(ls(),"SeuratObj"))
 
@@ -3336,8 +3336,8 @@ for (i in 1:length(gene)) {
 p<-(p1+p2+p3+p4+p5+p6+p7+p8+p9+p10)+plot_layout(ncol = 5)
 
 ggsave("figure/FigS10E.NSCs_NB.Injury-related.pseudotime.gene_expression.pdf",p,width = 18,height = 5)
-# — 17 FigS11 Related to Fig6: Integration of our snRNA-seq dataset with other published data. -----------------------------------------------------------
-# —— 17.1 FigS11A Check NSC_NB new marker by Wang's data -----------------------------------------------------------
+# — 17 Figure 6-Figure Supplement 3–Source Code 1: Integration of our snRNA-seq dataset with other published data -----------------------------------------------------------
+# —— 17.1 Figure 6-Figure Supplement 3A Check NSC_NB new marker by Wang's data -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 load("result/SeuratObj.Celltype_Minor3.Stage.v11.RData")
 
@@ -3362,7 +3362,7 @@ p<-DotPlot(object = tmp_Sub, features = gene, group.by  = "Minor3")
     theme_classic()+
     theme(axis.text=element_text(size=11, color="black")) + RotatedAxis())
 ggsave(paste("figure/FigS11A.Check_NSC_NB.new_marker.by_Wang_data.pdf",sep = ""),p3,width = 4.5,height = 4)
-# —— 17.1 FigS11B Integration Zhou's refdata umap -----------------------------------------------------------
+# —— 17.2 Figure 6-Figure Supplement 3B Integration Zhou's refdata umap -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -3426,7 +3426,7 @@ p2<-DimPlot(seurat.combined, reduction = "umap", group.by = "Group",
 ggsave(paste("figure/Song_hongjun_et_al.v2.display.cca.umap.png",sep = ""),p,width = 18,height = 9)
 ggsave(paste("figure/FigS11B.Integration.Zhou_refdata.umap.png",sep = ""),p,width = 18,height = 9)
 
-# —— 17.1 FigS11CD Integration Zhou's refdata featureplot -----------------------------------------------------------
+# —— 17.3 Figure 6-Figure Supplement 3CD Integration Zhou's refdata featureplot -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample")
 rm(list=setdiff(ls(),"SeuratObj"))
 
@@ -3465,7 +3465,7 @@ p<-FeaturePlot(tmp_Sobj, features = tmp_gene,repel = T,pt.size = 0.01,ncol = 2,r
 
 ggsave(filename = "figure/FigS11CD.Integration.Zhou_refdata.featureplot.part2.png",p,width = 12,height = 22)
 
-# —— 17.1 FigS11E Multimodal reference mapping wang_et_al -----------------------------------------------------------
+# —— 17.4 Figure 6-Figure Supplement 3E Multimodal reference mapping wang_et_al -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=setdiff(ls(),"tmp_Sobj"))
 
@@ -3585,7 +3585,7 @@ tmp_cell<-p2$data
 (pp1<-(p5/p4))
 ggsave(filename = paste("figure/FigS11E.Multimodal_reference_mapping.wang_et_al.pdf",sep = ""),
        pp1,width = 5,height = 8)
-# —— 17.1 FigS11F Multimodal reference mapping Franjic_et_al -----------------------------------------------------------
+# —— 17.5 Figure 6-Figure Supplement 3F Multimodal reference mapping Franjic_et_al -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
@@ -3644,7 +3644,7 @@ tmp_cell<-p2$data
 (pp1<-(p5/p4))
 ggsave(filename = paste("figure/FigS11F.Multimodal_reference_mapping_Franjic_et_al.pdf",sep = ""),
        pp1,width = 5,height = 8)
-# —— 17.1 FigS11G Multimodal reference mapping Ayhan_et_al -----------------------------------------------------------
+# —— 17.6 Figure 6-Figure Supplement 3G Multimodal reference mapping Ayhan_et_al -----------------------------------------------------------
 setwd("/data1/zhur/proj/scRNA/ltq/sample10_v9_aggr_change_sample/Code_upload")
 rm(list=ls())
 
